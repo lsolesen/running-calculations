@@ -11,7 +11,7 @@ class Running_IpointTest extends PHPUnit_Framework_TestCase
         $secs = 52;
         $dist = 3.15;
         $vdot = 38.7;
-        $ipoint = new Running_IPoints($vdot);
+        $ipoint = new Running_IPoints();
         $ipoints = $ipoint->calculate($dist, $hours, $mins, $secs, $vdot);
         $this->assertEquals(10.51, $ipoints);
     }
