@@ -2,3 +2,13 @@ Running calculations
 ==
 
 Will contain PHP tools for calculation different stuff for running.
+
+Vdot
+--
+
+    $hours = 0;
+    $minutes = 19;
+    $seconds = 6;
+    $distance = 5;
+    $vdot = new Running_Vdot();
+    $vdot->calculate($hours, $minutes, $seconds, $distance);
