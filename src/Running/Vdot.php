@@ -87,34 +87,4 @@ class Running_Vdot
         //return the VO2max
         return $vo2;
     }
-
-    /**
-     * Calculate paces based on VDOT
-     *
-     * @param $vdot
-     *
-     * @return paces
-     */
-    function pace($vdot)
-    {
-        // result is seconds pr. mile
-        $easy_pace = pow($vdot, 1.72) - $vdot * 36.5 + 1482;
-        $marathon_pace = (($easy_pace - $tempo_pace) * 2/3) + $easy_pace; // 2/3 from Easy to Tempo.
-        $tempo_pace = pow($vdot, 1.73) - $vdot * 36 + 1340;
-        $interval_pace = pow($vdot, 1.726) - $vdot * 34.7 + 1256;
-        $repetition_pace = $interval_pace - 24; // 24 seconds / mile (or 6 seconds/400) faster than Interval.
-
-        return array(
-            'easy_pace' => $this->km($easy_pace),
-            'marathon_pace' => $this->km($marathon_pace),
-            'tempo_pace' => $this->km($tempo_pace),
-            'interval_pace' => $this->km($interval_pace),
-            'repetition_pace' => $this->km($repetition_pace)
-        );
-    }
-
-    function km($mile)
-    {
-        return $mile / 1.60935;
-    }
 }
