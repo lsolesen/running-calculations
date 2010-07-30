@@ -60,7 +60,7 @@ class Running_Vdot
      *
      * @return integer
      */
-    function calculate($hrs, $mins, $secs, $dist)
+    function calculate($dist, $hrs, $mins, $secs)
     {
         $th = $hrs * 60; //all time has to be in minutes
         $tm = $mins * 1; //this is already in minutes

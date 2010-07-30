@@ -11,7 +11,7 @@ class Running_VdotTest extends PHPUnit_Framework_TestCase
         $secs = 53;
         $dist = 5;
         $vdot = new Running_Vdot;
-        $vo2 = $vdot->calculate($hours, $mins, $secs, $dist);
+        $vo2 = $vdot->calculate($dist, $hours, $mins, $secs);
         $this->assertEquals(83, $vo2);
     }
 }
