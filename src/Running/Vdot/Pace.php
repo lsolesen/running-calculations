@@ -46,7 +46,7 @@ class Running_Vdot_Pace
      */
     function marathon()
     {
-        return round((($this->easy() - $this->tempo()) * 2/3) + $this->easy(), 2); // 2/3 from Easy to Tempo.
+        return round((($this->easy() - $this->tempo()) * 2/3) + $this->tempo(), 2); // 2/3 from Easy to Tempo.
     }
 
     /**

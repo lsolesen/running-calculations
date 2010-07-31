@@ -18,7 +18,7 @@ class Running_PaceTest extends PHPUnit_Framework_TestCase
 
     function testMarathon()
     {
-        $this->assertEquals(0, $this->pace->marathon());
+        $this->assertEquals(278.44, $this->pace->marathon());
     }
 
     function testTempo()
