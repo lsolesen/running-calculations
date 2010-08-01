@@ -83,4 +83,9 @@ class Running_Vdot_Pace
     {
         return round($mile / 1.60935, 2);
     }
+
+    static public function hhiiss($seconds)
+    {
+        return gmdate("H:i:s", $seconds);
+    }
 }

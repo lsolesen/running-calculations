@@ -36,4 +36,9 @@ class Running_PaceTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(150.58, $this->pace->repetition());
     }
 
+    function testHHIISS()
+    {
+        $this->assertEquals('00:01:00', Running_Vdot_Pace::hhiiss(60));
+        $this->assertEquals('00:04:41', Running_Vdot_Pace::hhiiss(281));
+    }
 }
