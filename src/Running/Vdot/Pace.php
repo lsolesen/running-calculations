@@ -2,6 +2,8 @@
 /**
  * Compute Pace from VDOT
  *
+ * @link http://www.hillrunner.com/calculators/trainpaces.php
+ *
  * @author Lars Olesen <lars@intraface.dk>
  */
 
@@ -50,7 +52,7 @@ class Running_Vdot_Pace
     }
 
     /**
-     * Calculate tempo pace paces based on VDOT
+     * Calculate tempo pace paces based on VDOT - lactate threshold
      *
      * @return integer
      */

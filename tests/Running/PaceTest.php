@@ -1,5 +1,4 @@
 <?php
-require_once 'PHPUnit/Framework.php';
 require_once dirname(__FILE__) . '/../../src/Running/Vdot/Pace.php';
 
 class Running_PaceTest extends PHPUnit_Framework_TestCase
@@ -40,5 +39,6 @@ class Running_PaceTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('00:01:00', Running_Vdot_Pace::hhiiss(60));
         $this->assertEquals('00:04:41', Running_Vdot_Pace::hhiiss(281));
+        $this->assertEquals('00:02:30', Running_Vdot_Pace::hhiiss(150));
     }
 }
