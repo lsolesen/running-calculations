@@ -1,5 +1,4 @@
 <?php
-require_once 'PHPUnit/Framework.php';
 require_once dirname(__FILE__) . '/../../src/Body/Stofskifte.php';
 
 class Body_StofskifteTest extends PHPUnit_Framework_TestCase

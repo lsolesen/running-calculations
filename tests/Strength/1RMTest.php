@@ -1,5 +1,4 @@
 <?php
-require_once 'PHPUnit/Framework.php';
 require_once dirname(__FILE__) . '/../../src/Strength/1RM.php';
 
 class Strength_1RMTest extends PHPUnit_Framework_TestCase
