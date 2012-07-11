@@ -1,4 +1,4 @@
-Health measurements calculations
+Health measurements calculations [![Build Status](https://secure.travis-ci.org/lsolesen/running-calculations.png?branch=master)](http://travis-ci.org/lsolesen/running-calculations)
 ==
 
 Will contain PHP tools to calculate different health measurements.
