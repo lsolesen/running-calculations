@@ -1,11 +1,13 @@
 <?php
-require_once dirname(__FILE__) . '/../../src/Body/BMI.php';
+namespace Body\Test;
 
-class Body_BMI extends PHPUnit_Framework_TestCase
+use Body\BMI;
+
+class Body_BMI extends \PHPUnit_Framework_TestCase
 {
     function testCalculate()
     {
-        $bmi = new Body_BMI();
+        $bmi = new BMI();
         $this->assertEquals(190.88, $bmi->calculate($height, $weight));
     }
 }

@@ -2,12 +2,12 @@
 namespace Running;
 
 /**
- * Balke test is to cover as many meters in 15 minutes as possible
+ * Horwills revised forumla based on the Balke test
  */
-class Balke
+class Horwill
 {
     /**
-     * estimates VO2 max from distance covered in 15 minutes
+     * Estimates vo2 from distance covered in 15 minutes
      *
      * @param integer $metres covered in 15 minutes
      *
@@ -15,6 +15,6 @@ class Balke
      */
     public function vo2($metres)
     {
-        return (6.5 + (($metres/400)*5));
+        return (($metres/15 - 133) * 0.172 + 33.3);
     }
 }

@@ -1,4 +1,6 @@
 <?php
+namespace Running;
+
 /**
  * Calculates estimated IPoints (intensity points)
  *
@@ -7,7 +9,7 @@
  * @author lsolesen
  *
  */
-class Running_IPoints
+class IPoints
 {
     /**
      * Calculates IPoints
@@ -20,7 +22,7 @@ class Running_IPoints
      *
      * @return double
      */
-    function calculate($distance, $hours, $minutes, $seconds, $vdot)
+    public function calculate($distance, $hours, $minutes, $seconds, $vdot)
     {
         $km_pr_hour = $distance*((60*60)/($minutes*60+$seconds));
         $p6 = -4.6 + (0.182258 * ($km_pr_hour * 1000 / 60)) + (0.000104 * pow($km_pr_hour * 1000 / 60, 2));

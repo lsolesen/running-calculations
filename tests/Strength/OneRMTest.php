@@ -1,13 +1,15 @@
 <?php
-require_once dirname(__FILE__) . '/../../src/Strength/1RM.php';
+namespace Strength\Test;
 
-class Strength_1RMTest extends PHPUnit_Framework_TestCase
+use Strength\OneRepetitionMaximum;
+
+class OneRMTest extends \PHPUnit_Framework_TestCase
 {
     function testCalculate()
     {
         $weight = 300;
         $repetitions = 7;
-        $vdot = new Strength_1RM;
+        $vdot = new OneRepetitionMaximum;
         $rm = $vdot->calculate($repetitions, $weight);
         $this->assertEquals(360, $rm);
     }
@@ -16,7 +18,7 @@ class Strength_1RMTest extends PHPUnit_Framework_TestCase
     {
         $weight = 300;
         $repetitions = 3;
-        $vdot = new Strength_1RM;
+        $vdot = new OneRepetitionMaximum;
         $rm = $vdot->calculate($repetitions, $weight);
         $this->assertEquals(330, $rm);
     }
