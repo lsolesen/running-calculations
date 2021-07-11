@@ -25,6 +25,8 @@
  * @link http://www.simpsonassociatesinc.com/runningmath9.php3
  */
 
+namespace Running;
+
 /**
  * Convert distance from miles to kilometers
  *
@@ -48,7 +50,7 @@ function convertmilestokilometers($dist)
  *
  * @link http://www.simpsonassociatesinc.com/runningmath9.php3
  */
-class Running_Vdot
+class Vdot
 {
     /**
      * Calculate VO2 max
@@ -60,7 +62,7 @@ class Running_Vdot
      *
      * @return integer
      */
-    function calculate($dist, $hrs, $mins, $secs)
+    public function calculate($dist, $hrs, $mins, $secs)
     {
         $th = $hrs * 60; //all time has to be in minutes
         $tm = $mins * 1; //this is already in minutes
@@ -82,7 +84,7 @@ class Running_Vdot
         $v = $v + (0.000104 * $d * $d);
 
         //calculate the VO2max of the runner to the second decimal position
-        $vo2 = number_format(($v / $p),2);
+        $vo2 = number_format(($v / $p), 2);
 
         //return the VO2max
         return $vo2;

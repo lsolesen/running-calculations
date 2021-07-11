@@ -1,7 +1,9 @@
 <?php
-require_once dirname(__FILE__) . '/../../src/Running/K.php';
+namespace Running\Test;
 
-class Running_KTest extends PHPUnit_Framework_TestCase
+use Running\K;
+
+class KTest extends \PHPUnit_Framework_TestCase
 {
     function testCalculate()
     {
@@ -9,7 +11,7 @@ class Running_KTest extends PHPUnit_Framework_TestCase
         $velocity = 14.9;
         $rest_heartrate = 34;
         $max_heartrate = 185;
-        $vdot = new Running_K($rest_heartrate, $max_heartrate);
+        $vdot = new K($rest_heartrate, $max_heartrate);
         $vo2 = $vdot->calculate($velocity, $heartrate);
         $this->assertEquals(67.75, round($vo2, 2));
     }

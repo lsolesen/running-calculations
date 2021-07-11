@@ -1,4 +1,6 @@
 <?php
+namespace Strength;
+
 /**
  * Calculates estimated 1RM
  *
@@ -7,9 +9,9 @@
  * @author lsolesen
  *
  */
-class Strength_1RM
+class OneRepetitionMaximum
 {
-    function calculate($repetitions, $weight)
+    public function calculate($repetitions, $weight)
     {
         return $weight * (($repetitions / 30) + 1);
     }

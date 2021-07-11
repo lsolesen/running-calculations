@@ -5,12 +5,14 @@
  * @author Lars Olesen <lars@intraface.dk>
  */
 
+namespace Running;
+
 /**
  * Riegels formula
  *
  * @author Lars Olesen <lars@intraface.dk>
  */
-class Running_Riegel
+class Riegel
 {
     /**
      * Calculate Time for distance to run
@@ -21,9 +23,8 @@ class Running_Riegel
      *
      * @return integer
      */
-    function calculate($known_time, $known_distance, $distance_to_run)
+    public function calculate($known_time, $known_distance, $distance_to_run)
     {
         return round($known_time * pow($distance_to_run/$known_distance, 1.06), 2);
     }
 }
-

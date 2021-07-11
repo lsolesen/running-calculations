@@ -1,9 +1,10 @@
 <?php
-class Body_BMI
+namespace Body;
+
+class BMI
 {
-    function calculate($height, $weight)
+    public function calculate($height, $weight)
     {
         return 0;
     }
-
 }

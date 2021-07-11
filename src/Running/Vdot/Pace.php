@@ -7,12 +7,14 @@
  * @author Lars Olesen <lars@intraface.dk>
  */
 
+namespace Running\Vdot;
+
 /**
  * Compute Pace from VDOT
  *
  * @author Lars Olesen <lars@intraface.dk>
  */
-class Running_Vdot_Pace
+class Pace
 {
     protected $vdot;
 
@@ -20,10 +22,8 @@ class Running_Vdot_Pace
      * Constructor
      *
      * @param integer $vdot
-     *
-     * @return void
      */
-    function __construct($vdot)
+    public function __construct($vdot)
     {
         $this->vdot = $vdot;
     }
@@ -33,7 +33,7 @@ class Running_Vdot_Pace
      *
      * @return integer
      */
-    function easy()
+    public function easy()
     {
         // result is seconds pr. mile
         return $this->km(pow($this->vdot, 1.72) - $this->vdot * 36.5 + 1482);
@@ -46,9 +46,9 @@ class Running_Vdot_Pace
      *
      * @return integer
      */
-    function marathon()
+    public function marathon()
     {
-        return round((($this->easy() - $this->tempo()) * 2/3) + $this->tempo(), 2); // 2/3 from Easy to Tempo.
+        return round($this->easy() - (($this->easy() - $this->tempo()) * 2/3), 2); // 2/3 from Easy to Tempo.
     }
 
     /**
@@ -56,7 +56,7 @@ class Running_Vdot_Pace
      *
      * @return integer
      */
-    function tempo()
+    public function tempo()
     {
         return $this->km(pow($this->vdot, 1.73) - $this->vdot * 36 + 1340);
     }
@@ -66,7 +66,7 @@ class Running_Vdot_Pace
      *
      * @return integer
      */
-    function interval()
+    public function interval()
     {
         return $this->km(pow($this->vdot, 1.726) - $this->vdot * 34.7 + 1256);
     }
@@ -76,18 +76,23 @@ class Running_Vdot_Pace
      *
      * @return integer
      */
-    function repetition()
+    public function repetition()
     {
         return $this->km($this->interval() - 24); // 24 seconds / mile (or 6 seconds/400) faster than Interval.
     }
 
-    function km($mile)
+    public function km($mile)
     {
         return round($mile / 1.60935, 2);
     }
 
-    static public function hhiiss($seconds)
+    public static function hhiiss($seconds)
     {
         return gmdate("H:i:s", $seconds);
+    }
+
+    public static function ss($min, $sec)
+    {
+        return $min * 60 + $sec;
     }
 }

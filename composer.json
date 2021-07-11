@@ -1,5 +1,5 @@
 {
-  "name": "training-calculations",
+  "name": "lsolesen/training-calculations",
     "type": "library",
     "description": "PHP-SDK to calculate training parameters",
     "homepage": "http://github.com/lsolesen/running-calculations",
@@ -16,5 +16,20 @@
         "phpunit/phpunit": "4.4.*",
         "squizlabs/php_codesniffer": "2.*",
         "satooshi/php-coveralls": "dev-master"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Strength\\": "src/Strength",
+            "Running\\": "src/Running",
+            "Body\\": "src/Body"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "Strength\\Test\\": "tests/Strength/",
+          "Body\\Test\\": "tests/Body/",
+          "Running\\Test\\": "tests/Running/"
+        }
     }
 }

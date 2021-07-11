@@ -1,14 +1,16 @@
 <?php
-require_once dirname(__FILE__) . '/../../src/Running/Tokmakidis.php';
+namespace Running\Test;
 
-class Running_TokmakidisTest extends PHPUnit_Framework_TestCase
+use Running\Tokmakidis;
+
+class TokmakidisTest extends \PHPUnit_Framework_TestCase
 {
     function testCalculate()
     {
         $mins = 12;
         $secs = 53;
         $dist = 5;
-        $vdot = new Running_Tokmakidis;
+        $vdot = new Tokmakidis;
         $vo2 = $vdot->calculate($mins, $secs, $dist);
         $this->assertEquals(83, $vo2);
     }
